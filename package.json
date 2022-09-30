@@ -51,6 +51,8 @@
     "dist"
   ],
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "react-notifications": "^1.7.4",
+    "react-router-dom": "^6.4.1"
   }
 }
