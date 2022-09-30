@@ -6,7 +6,7 @@ Used together with: [Django counterpart](https://github.com/Logicore-project/log
 
 ## Usage
 
-1. Perform installation and configuration of `logicore-django-react' and `logicore-django-react-pages`: https://github.com/Logicore-project/logicore-django-react-pages#usage
+1. Perform installation and configuration of `logicore-django-react` and `logicore-django-react-pages`: https://github.com/Logicore-project/logicore-django-react-pages#usage
 
 2. Install:
 
