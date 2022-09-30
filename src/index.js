@@ -146,9 +146,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Switch>
+        <Routes>
           <Route path="*" element={<BaseLayout />} />
-        </Switch>
+        </Routes>
       </BrowserRouter>
       <NotificationContainer enterTimeout={10} leaveTimeout={10} />
     </>
