@@ -4,15 +4,17 @@
 
 Used together with: [Django counterpart](https://github.com/Logicore-project/logicore-django-react-pages)
 
-# Installation
+## Usage
+
+1. Perform installation and configuration of `logicore-django-react' and `logicore-django-react-pages`: https://github.com/Logicore-project/logicore-django-react-pages#usage
+
+2. Install:
 
 ```bash
 yarn add logicore-react-pages
 ```
 
-## Usage
-
-Minimal starter `App.js`:
+3. Create minimal starter `App.js`:
 
 ```javascript
 import React from "react";
