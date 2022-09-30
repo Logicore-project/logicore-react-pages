@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react' // FIXME
 
 import { NotificationManager, NotificationContainer } from 'react-notifications'
 
