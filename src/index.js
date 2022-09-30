@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import { NotificationManager } from 'react-notifications'
+import { NotificationManager, NotificationContainer } from 'react-notifications'
 
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -39,7 +39,7 @@ let wrapperComponents = {
   MainWrapper
 }
 
-const result_worth_processing = ({ result, loc, navigate }) => {
+const default_result_worth_processing = ({ result, loc, navigate }) => {
   if (result?.notification) {
     NotificationManager[result.notification.type]('', result.notification.text)
   }
@@ -68,6 +68,8 @@ const gatherFileUids = (data) => {
     )
   }
 }
+
+/* global FormData */
 
 const BaseLayout = ({ result_worth_processing_fn }) => {
   const result_worth_processing =
@@ -157,7 +159,7 @@ function App() {
 export {
   BaseLayout,
   gatherFileUids,
-  result_worth_processing,
+  default_result_worth_processing,
   mainComponents,
   wrapperComponents,
   App,
