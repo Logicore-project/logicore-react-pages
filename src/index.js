@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react' // FIXME
 
 import { NotificationManager, NotificationContainer } from 'react-notifications'
 
-import { Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -145,11 +145,11 @@ const BaseLayout = ({ result_worth_processing_fn }) => {
 function App() {
   return (
     <>
-      <Router>
-        <Routes>
+      <BrowserRouter>
+        <Switch>
           <Route path="*" element={<BaseLayout />} />
-        </Routes>
-      </Router>
+        </Switch>
+      </BrowserRouter>
       <NotificationContainer enterTimeout={10} leaveTimeout={10} />
     </>
   );
