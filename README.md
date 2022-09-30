@@ -1,14 +1,10 @@
 # logicore-react-pages
 
-ReactJS-based declarative forms library
+[PRG](https://en.wikipedia.org/wiki/Post/Redirect/Get)-like approach for React + Django AJAX apps
 
-# Features:
+Used together with: [Django counterpart](https://github.com/Logicore-project/logicore-django-react-pages)
 
-- definition with simple tree data structure
-- automatic validation
-- extendable: custom field types and custom validators
-- design-agnostic
-- cross-field dependencies and complex behaviour using interceptors
+# Installation
 
 ```bash
 yarn add logicore-react-pages
@@ -16,103 +12,25 @@ yarn add logicore-react-pages
 
 ## Usage
 
-```jsx
-import React, { useState } from 'react'
+Minimal starter `App.js`:
 
-import {
-  validateDefinition,
-  definitionIsInvalid,
-  pathToUpdate,
-  FormComponent,
-  GenericForm,
-  formComponents,
-  FieldLabel,
-  interceptors,
-  fieldsLayouts,
-  getByPath,
-  setByPath,
-  modifyHelper,
-  update,
-} from "logicore-react-pages";
-//import 'logicore-react-pages/dist/index.css'
+```javascript
+import React from "react";
+import { App, mainComponents, componentWrappers } from `logicore-react-pages`;
 
-const fields = {
-  "type": "Fields",
-  "fields": [
-    {
-      "type": "TextField",
-      "k": "name",
-      "label": "Name",
-      "required": true
-    },
-    {
-      "type": "UUIDListField",
-      "k": "items",
-      "addWhat": "item",
-      "layout": "WithDeleteButton",
-      "fields": [
-        {
-          "type": "TextField",
-          "k": "name",
-          "label": "Item Name",
-          "required": true
-        },
-        {
-          "type": "NumberField",
-          "k": "count",
-          "label": "Count"
-        }
-      ]
-    }
-  ]
-};
+Object.assign(mainComponents, {
+    MyComponent1,
+    MyComponent2,
+});
 
-const App = () => {
-  const [state, setState] = useState({});
-  const [errors, setErrors] = useState({});
-  const onReset = (path) => {
-    setErrors(update(errors, pathToUpdate(path, { $set: null })), null);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const errors = validateDefinition(fields, state);
-    setErrors(errors, null);
-    if (!definitionIsInvalid(fields, errors, state)) {
-      console.log('data submitted', state);
-    } else {
-      setTimeout(() => {
-        try {
-          document
-            .getElementsByClassName("invalid-feedback d-block")[0]
-            .parentNode.scrollIntoViewIfNeeded();
-        } catch (e) {
-          console.warn(e);
-        }
-      }, 50);
-    }
-  };
-  return (<div className="container">
-    <h3 className="my-3">My First form</h3>
-    <form onSubmit={onSubmit}>
-      <FormComponent
-        definition={fields}
-        value={state}
-        onChange={setState}
-        error={errors}
-        onReset={onReset}
-        path={[]}
-      />
-      <div className="btn-group my-3">
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <button type="button" className="btn btn-outline-secondary" onClick={_ => { setState(null); setErrors(null); }}>Reset</button>
-      </div>
-    </form>
-  </div>);
-}
+Object.assign(componentWrappers, {
+    MyWrapper1,
+    MyWrapper2,
+});
 
 export default App;
 ```
+
 
 ## License
 
