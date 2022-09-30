@@ -16,7 +16,7 @@ Minimal starter `App.js`:
 
 ```javascript
 import React from "react";
-import { App, mainComponents, wrapperComponents } from `logicore-react-pages`;
+import { App, mainComponents, wrapperComponents } from "logicore-react-pages";
 
 const MainWrapper = ({ result, onChange }) => {
   const Component = mainComponents[result?.template];
@@ -29,7 +29,6 @@ const MainWrapper = ({ result, onChange }) => {
 
 Object.assign(wrapperComponents, {
     MainWrapper,
-    // OtherWrapper1,
 });
 
 
