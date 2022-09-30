@@ -1,6 +1,6 @@
 {
   "name": "logicore-react-pages",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "ReactJS-based declarative forms library",
   "author": "Andrei Boltachev <andrewboltachev@gmail.com>",
   "repository": "logicore-project/logicore-react-pages",
@@ -12,8 +12,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format cjs",
+    "start": "microbundle-crl watch --no-compress --format cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
